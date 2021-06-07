@@ -1,2 +1,2 @@
 # DiscordBot
-A personal project that helps me learn how to integrate and code a Discord Bot
+A personal project that will help me learn how to integrate and code a Discord Bot.
