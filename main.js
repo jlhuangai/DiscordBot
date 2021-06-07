@@ -36,4 +36,5 @@ client.on('message', message =>{
        }
 });
 
-client.login('ODUxMzU5OTU2NzQ1NTg0Njcw.YL3Ivw.TI-S6VaeZFLLM54OUoS662SZ5Xg');
+require("dotenv").config();
+client.login(process.env.BOT_TOKEN);
