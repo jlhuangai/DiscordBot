@@ -34,6 +34,9 @@ client.on('message', message =>{
     else if(command == 'youtube'){
         client.commands.get('youtube').execute(message,args);
        }
+    else if(command == "power"){
+        client.commands.get('power').execute(message,args);
+    }
 });
 
 require("dotenv").config();
