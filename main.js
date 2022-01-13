@@ -8,11 +8,19 @@ const fs = require('fs');
 
 client.commands = new Discord.Collection();
 
+// Reads different files under commands
 const commandFiles = fs.readdirSync('./commands/').filter( file => file.endsWith('.js') );
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
 }
+
+const commandFiles1 = fs.readdirSync('./commands/pings/').filter( file => file.endsWith('.js') );
+for(const file of commandFiles1){
+    const command = require(`./commands/pings/${file}`);
+    client.commands.set(command.name, command);
+}
+
 
 
 client.once('ready', () => { 
@@ -27,16 +35,29 @@ client.on('message', message =>{
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
-  if(command === 'ping'){
-      client.commands.get('ping').execute(message,args);
-      }
+  // Return Avatar
+  if (command === 'avatar' || command === 'av') {
+    client.commands.get('avatar').execute(message,args);
+}
 
-    else if(command == 'youtube'){
+  // Ping Commands
+  if(command === 'pingme'){
+      client.commands.get('pingme').execute(message,args);
+      }
+      else if(command === 'ping'){
+        client.commands.get('ping').execute(message,args);
+        }
+  
+  // Commands     
+  if(command === 'youtube'){
         client.commands.get('youtube').execute(message,args);
        }
-    else if(command == "power"){
+  if(command === "power"){
         client.commands.get('power').execute(message,args);
     }
+
+    
+    
 });
 
 require("dotenv").config();

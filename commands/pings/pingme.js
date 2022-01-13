@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'ping',
+    name: 'pingme',
     description: "This command pings people!",
     execute(message, args){
         var ping_messages = [`${message.author} Stop asking me to ping you simp `, `${message.author} What does singing from the heart mean? `, `${message.author} You are special to me :) `]
@@ -7,3 +7,7 @@ module.exports = {
         message.channel.send(ping_messages[ping_message]);
     }
 }
+
+
+
+

@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args){
         let role = message.guild.roles.cache.find(r => (r.name === "Mod" || r.name === "Moderator"));
         if(message.member.roles.cache.some(role => role.name === 'Mod' || role.name === "Moderator")) {
-          message.channel.send( 'Welcome to the mod team: ' + 'https://www.reddit.com/r/okbuddyretard/comments/j5ifgm/i_want_to_join_discort_mod_team/');}
+          message.channel.send( 'Welcome to the mod team: ');}
         
         else {
             message.channel.send('Unfortunately you do not have permissions to use this command');
